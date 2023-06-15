@@ -22,25 +22,103 @@ body {
     max-width: 1920px;
 }
 
+/*--HEADER--*/
+
+header {
+    height: 120px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    position: absolute;
+}
+
+header .container {
+    height: 100%;
+    width: 1500px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+header .container ul {
+    display: flex;
+}
+
 /*--Section 1--*/
 
 @media (min-width: 1500px) {
     .sec1 {
         height: 100vh;
         width: 100%;
+        background-image: url(img/guts.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
 .sec1 .container {
     width: 1500px;
-    height: 100%;
     margin: 0 auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sec h1{
+.sec1 h1{
     font-size: 8em;
+    margin-bottom: 70px;
 }
 
+.sec1 button {
+    position: relative;
+    height: 70px;
+    width: 250px;
+    border-radius: 50px;
+    background-color: black;
+    border: 3px solid #EBE150;
+    font-size: 1.5em;
+    color: #EBE150;
+    transition: 0.3s;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.sec1 button::before {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    border-radius: 50px;
+    background-color: #EBE150;
+    top: -2px;
+    left: -2px;
+    transform: translate(-100%);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.sec1 button:hover::before {
+    transform: translate(0%);
+}
+
+
+.sec1 button:hover {
+    color: black;
+    width: 280px;
+}
+
+.sec1 button i {
+    transform: scale(0);
+    margin: -10px;
+    transition: 0.3s;
+}
+
+.sec1 button:hover i {
+    transform: scale(1);
+    margin-left: 10px;
+}
